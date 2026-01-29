@@ -22,7 +22,7 @@ There are numerous APIs available to run python code in parallel, each with thei
 ## Joblib ([fibonacci_joblib.py](./parallel/fibonacci_joblib.py))
 For tasks that are embarassingly parallel or those using NumPy arrays, `joblib` can be a more efficient and convenient solution. Since our `multiprocessing` example above involves computing fibonacci numbers in separate processes without any dependencies across processes, this computation is considered **embarassingly parallel**. Thus, we can use `joblib` to compute Fibonacci numbers in parallel.
 
-The following line in our example script shows how to apply the function to compute fibonacci numbers across an array of input values:
+The following line in the provided example script shows how to apply the function to compute fibonacci numbers across an array of input values:
 ```results = Parallel(n_jobs=8)(delayed(fib)(n) for n in my_values)```
 
 In this case, we are applying the `fib` function to each value `n` in our `my_values` list. 
@@ -37,9 +37,9 @@ In this case, we are applying the `fib` function to each value `n` in our `my_va
 > 
 > For example, if you request `ntasks_per_node=2` and `cpus-per-task=4`, you have `2 * 4 = 8` CPUs that can run tasks (or threads inside tasks) at the same time.
 
-Our example slurm script only uses 8 CPUs, so you will not see any performance improvement as `n_jobs` increases beyond 8. Furthermore, increasing the amount of processes running in parallel may not improve runtime in all cases, as there is overhead to managing each additional process.
+The provided example Slurm script only uses 8 CPUs, so you will not see any performance improvement as `n_jobs` increases beyond 8. Furthermore, increasing the amount of processes running in parallel may not improve runtime in all cases, as there is overhead to managing each additional process.
 
-For a more in depth discussion on `joblib`, please refer to its [documentation](https://joblib.readthedocs.io/en/stable/).
+For a more in depth discussion on `joblib`, please refer to the [official documentation](https://joblib.readthedocs.io/en/stable/).
 
 > [!TIP]
 > In line 23 of this example, `n_jobs` or the number of parallel processes, should match the number of CPUs or tasks you request in order to see any runtime improvements.
