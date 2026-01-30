@@ -28,6 +28,11 @@ In this case, we are applying the `fib` function to each value `n` in our `my_va
 
 `n_jobs=8` creates 8 independent Python tasks where each task performs the computation in parallel. 
 
+A corresponding Slurm script is provided in [python-joblib.bash](./parallel/python-joblib.bash). To run the example, submit the job from a login node using:
+```
+sbatch python-joblib.bash
+```
+
 ### Important Facts
 Please note, in order to see runtime improvements across processes, you will need to make sure to request as many CPUs for your Slurm job as the number of processes you want to run.
 The request can be made using the slurm `ntasks_per_node` or `cpus_per_task` options, where `n_jobs = ntasks_per_node * cpus_per_task`.
