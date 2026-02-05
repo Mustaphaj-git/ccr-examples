@@ -16,24 +16,27 @@ sbatch python-sp.bash
 ## Parallel Python Tutorial ([parallel/](./parallel))
 Parallel processing is a technique that executes multiple tasks at the same time using multiple CPU cores. This directory currently includes an example using `joblib` to perform parallel processing in Python. A `multiprocessing` example will be added in a future update.
 
-### Multiprocessing (Not Yet Implemented)
+### Multiprocessing
 There are numerous APIs available to run python code in parallel, each with their strengths and weaknesses. A common API for parallel python processing is called `multiprocessing`. This library is powerful, enabling things like interprocess communication.
 
 ### Joblib ([fibonacci_joblib.py](./parallel/fibonacci_joblib.py))
 For tasks that are embarassingly parallel or those using NumPy arrays, `joblib` can be a more efficient and convenient solution. In this example, Fibonacci numbers are computed in separate processes without any dependencies across processes. This type of computation is considered **embarassingly parallel**.
 
-The following line in the provided example script shows how to apply the function to compute fibonacci numbers across an array of input values: `results = Parallel(n_jobs=8)(delayed(fib)(n) for n in my_values)`
+The following line in the provided example script shows how to apply the function to compute fibonacci numbers across an array of input values: 
+```
+results = Parallel(n_jobs=8)(delayed(fib)(n) for n in my_values)
+```
 
 In this case, we are applying the `fib` function to each value `n` in our `my_values` list. 
 
 `n_jobs=8` creates 8 independent Python tasks where each task performs the computation in parallel. 
 
-A corresponding Slurm script is provided in [python-joblib.bash](./parallel/python-joblib.bash). To run the example, submit the job from a login node using:
+A corresponding Slurm script [python-joblib.bash](./parallel/python-joblib.bash) is provided. To run the example, submit the job using:
 ```
 sbatch python-joblib.bash
 ```
 
-### Important Facts
+#### Important Facts
 Please note, in order to see runtime improvements across processes, you will need to make sure to request as many CPUs for your Slurm job as the number of processes you want to run.
 The request can be made using the slurm `ntasks_per_node` or `cpus_per_task` options, where `n_jobs = ntasks_per_node * cpus_per_task`.
 
