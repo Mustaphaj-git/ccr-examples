@@ -44,8 +44,8 @@ The `cpus_per_task` option specifies the number of CPU cores available to each t
  
 For example, if you request `ntasks_per_node=2` and `cpus-per-task=4`, you have `2 * 4 = 8` CPUs that can run tasks (or threads inside tasks) at the same time.
 
+In line 23 of the Slurm script, `n_jobs` or the number of parallel processes, should match the number of CPUs or tasks you request in order to see any runtime improvements.
+
 The provided example Slurm script only uses 8 CPUs, so you will not see any performance improvement as `n_jobs` increases beyond 8. Furthermore, increasing the amount of processes running in parallel may not improve runtime in all cases, as there is overhead to managing each additional process.
 
 For a more in depth discussion on `joblib`, please refer to the [official documentation](https://joblib.readthedocs.io/en/stable/).
-
-In line 23 of this example, `n_jobs` or the number of parallel processes, should match the number of CPUs or tasks you request in order to see any runtime improvements.
