@@ -33,7 +33,7 @@ eb Gaussian-16.C.02-AVX2.eb --umask=007
 ## Using your module  
 
 > [!NOTE]
-> To make your custom modules appear in `module avail`, `module spider` etc., you can set the `$CCR_CUSTOM_BUILD_PATHS` environment variable following the instructions outlined [here](https://docs.ccr.buffalo.edu/en/latest/software/building/#building-modules-for-your-group).
+> To make your custom modules appear in `module avail`, `module spider` etc., you can set the `$CCR_CUSTOM_BUILD_PATHS` environment variable following the instructions outlined in [CCR's module building documentation](https://docs.ccr.buffalo.edu/en/latest/software/building/#building-modules-for-your-group).
 > To ensure the path gets picked up on login, point it to `~/.ccr/modulepaths`.
 
 Once the installation completes successfully, when you search for the module you should see it listed in a section at the top with your group's installation path listed.  For example:  
