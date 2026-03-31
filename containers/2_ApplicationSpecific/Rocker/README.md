@@ -3,13 +3,13 @@
 ## Building the container
 Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) for more detailed information on building and using Apptainer.
 
-A brief guide to building an Rocker container for CCR's HPC follows:
+A brief guide to building a Rocker container for use in CCR's HPC environment follows:
 
 1. Start an interactive job
 
 > [!NOTE]
 > Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container. We recommend requesting an interactive job on a compute node to conduct this build process. 
-> See CCR docs for more info on [submitting an interactive job](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission).
+> Refer to CCR's documentation for more information on [submitting an interactive job](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission).
 
 Request a job allocation from a login node:
 ```
@@ -31,7 +31,7 @@ cd /projects/academic/[YourGroupName]/[CCRusername]/Rocker
 export APPTAINER_CACHEDIR="${SLURMTMPDIR}"
 ```
 
-3. Once ready, build the container (This should take about 3 minutes):
+3. Once ready, build the container:
 ```
 apptainer build Rocker-$(arch).sif Rocker.def
 ```
@@ -50,7 +50,7 @@ INFO:    Build complete: Rocker.sif
 ## Run the container
 
 > [!NOTE]
-> It may be necessary to change the requested resources based on the R program you want to run. For this example, we will be using minimal resources to check if our container runs. See CCR docs for more info on [submitting an interactive job](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission).
+> It may be necessary to change the requested resources based on the R program you want to run. For this example, we will be using minimal resources to check if our container runs. Refer to the CCR documentation for more information on [submitting an interactive job](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission).
 
 Ensure you are on a compute node before running the container.
 
@@ -85,10 +85,10 @@ Type 'q()' to quit R.
 
 ## Editing the definition file
 
-This section is for users who need more than just the basic version of R. Lots of programs that run in R depend on other packages. The easiest way to install these packages to the contianer is through editing the definition file to include them.  To edit the definition file, we are going to add a package from CRAN (a general R package manager) and BioConductor (a more specific use case R package manager). 
+This section is for users who need more than just the basic version of R. Lots of programs that run in R depend on other packages. The easiest way to install additional packages in the container is by modifying the definition file to include them and then rebuilding the container.  For this example we will edit the definition file to add a package from CRAN (a general R package manager) and BioConductor (a more specific use case R package manager). 
 
 > [!NOTE]
-> Some use cases will also require Linux packages to be installed. An example container that demonstrates how to do so can be found [here](../seurat/seurat.def). This is also a good example of how this template could be modified to run a specific workflow with custom packages.
+> Some use cases will also require Linux packages to be installed.  We provide an [example](../seurat/seurat.def) that demonstrates how to do so, which is also a good example of how this template could be modified to run a specific workflow with custom packages.
 
 1. Navigate to your build directory.
 
@@ -125,7 +125,7 @@ apptainer build Rocker-$(arch).sif Rocker.def
 
 3. Test the container
 
-Ensure you are on a compute node in the same directory as your new .sif file. Run the container with:
+Ensure you are on a compute node in the same directory as your new `.sif` file. Run the container with:
 ```
 apptainer shell Rocker-x86_64.sif
 ```
@@ -179,11 +179,11 @@ Error in library([package]) : there is no package called ‘[package]’
 there was an issue with the installation. Otherwise, everything is working as it should.
 
 
-See CCR docs for more info on [Building Images with Apptainer](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-images-with-apptainer)
+Refer to the documentation on [Building Images with Apptainer] (https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-images-with-apptainer) for additional information.
 
-See R-project docs for more info on [Installing R Packages](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Installing-packages)
+Refer to the R-project documentation for more information on [Installing R Packages](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Installing-packages)
 
 ## Additional Information
 
 - The [Placeholders](../../../README.md#placeholders) section lists the available options for each placeholder used in the example scripts.
-- For more info on accessing shared project and global scratch directories, resource options, and other important container topics, please refer to the CCR [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) 
+- For more information on accessing shared project and global scratch directories, resource options, and other important container topics, please refer to the CCR [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) 
