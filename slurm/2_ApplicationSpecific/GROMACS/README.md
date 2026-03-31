@@ -14,7 +14,7 @@ You can generate a `bench.tpr` file for each `pme.mdp` file included in the data
 ```
 gmx_mpi grompp -f pme.mdp  -o bench.tpr
 ```
-Then you can run the corresponding GROMACS command in the loop. The [Slurm script](./slurm_GROMACS_benchmark_example.bash) included in this directory contains multiple GROMACS commands (commented out) for different CPU, GPU configurations. When testing a specific configuration, make sure to uncomment the command you want to use and comment out the others.
+Then you can run the corresponding GROMACS command inside the loop. The [Slurm script](./slurm_GROMACS_benchmark_example.bash) included in this directory contains multiple GROMACS commands (commented out) for different CPU, GPU configurations. When testing a specific configuration, make sure to uncomment the command you want to use and comment out the others.
 
 > [!NOTE]
 > The `water-cut1.0_GMX50_bare/0000.65` test fails. We believe the test needs to be larger to run on the allocated resources.
