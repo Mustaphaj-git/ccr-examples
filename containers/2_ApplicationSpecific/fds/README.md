@@ -21,7 +21,7 @@ After the pull completes, the Apptainer image will be saved as `fds_6.7.9.sif` i
 > This container includes Intel MPI Library 2021.6.  CCR's `ccrsoft/2023.01` [software environment](https://docs.ccr.buffalo.edu/en/latest/software/releases/#202301) includes a module for `intel/2022.00` which includes `impi 2021.5.0`  These two versions of MPI are alike enough that
 > this container works when loading the `intel/2022.00` module.  However, the user should be aware with future versions of FDS and CCR's intel modules, that you must align MPI versions on the system with the container in order for them to work properly.
 > 
-> See [CCR's docs on building MPI enabled images](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-mpi-enabled-images) for more info.
+> See [CCR's documentation on building MPI enabled images](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-mpi-enabled-images) for more information.
 
 ## Running the container image  
 
@@ -29,7 +29,7 @@ You can run FDS either in an interactive job or non-interactively by using a bas
 
 The following information on running FDS is provided as an example only.  The [`radiator.fds`](radiator.fds) input file is taken from the FDS website and used as an example.  This will run on, at most, 3 tasks.  Your real world work may scale to more tasks.
 
-FDS is capable of running across multiple nodes but this should only be utilized if your problem requires more than the number of CPUs in a compute node.  Running FDS across multiple nodes will increase the time it takes for your problem to compute.  The specifications for available compute nodes in CCR's UB-HPC cluster can be found in the [Hardware Specification section of CCR's docs](https://docs.ccr.buffalo.edu/en/latest/hpc/clusters/#ub-hpc-detailed-hardware-specifications).
+FDS is capable of running across multiple nodes but this should only be utilized if your problem requires more than the number of CPUs in a compute node.  Running FDS across multiple nodes will increase the time it takes for your problem to compute.  The specifications for available compute nodes in CCR's UB-HPC cluster can be found in the [Hardware Specification section of CCR's documentation](https://docs.ccr.buffalo.edu/en/latest/hpc/clusters/#ub-hpc-detailed-hardware-specifications).
 
 Please also refer to the [FDS documentation](https://pages.nist.gov/fds-smv/manuals.html) to properly setup your requests for CPUs and tasks.
 
@@ -53,7 +53,7 @@ export I_MPI_PMI_LIBRARY=/opt/software/slurm/lib64/libpmi.so
 
 Navigate to your build directory. Ensure the [`radiator.fds`](radiator.fds) file is present. This input file is taken from the FDS website and will be used for the example. 
 
-Request an interactive job with `salloc` to gain access to a compute node, as per [CCR's interactive job docs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission). Once the compute node is ready, use `srun` to run FDS on the allocated node:
+Request an interactive job with `salloc` to gain access to a compute node, as per [CCR's interactive job documentation](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission). Once the compute node is ready, use `srun` to run FDS on the allocated node:
 
 ```
 srun --jobid=[JobID] mpirun -np 3 apptainer exec fds_6.7.9.sif fds radiator.fds  

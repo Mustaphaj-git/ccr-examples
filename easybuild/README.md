@@ -2,7 +2,7 @@
 
 CCR staff utilize the Easybuild framework when installing software and this tool is made available to CCR users to install software themselves. Easybuild ensures that the compilation and linking that happens during a software installation is done correctly and will work with our systems. CCR staff do not offer courses on using Easybuild. However, there is excellent [documentation](https://docs.easybuild.io/) and [tutorials](https://tutorial.easybuild.io/) provided by Easybuild developers.  Please contact [CCR Help](https://docs.ccr.buffalo.edu/en/latest/help/) for assistance with troubleshooting Easybuild.
 
-This directory includes examples for building and rebuilding software with EasyBuild on CCR's clusters. For background information on EB recipes, toolchains, and related concepts, refer to our [EasyBuild documentation](https://docs.ccr.buffalo.edu/en/latest/howto/easybuild/#what-is-a-recipe). For common questions and troubleshooting tips, check out our [EasyBuild FAQ](https://docs.ccr.buffalo.edu/en/latest/howto/easybuild/#frequently-asked-questions).
+This directory includes examples for building and rebuilding software with EasyBuild on CCR's clusters. For background information on EB recipes, toolchains, and related concepts, refer to our [EasyBuild documentation](https://docs.ccr.buffalo.edu/en/latest/howto/easybuild/#what-is-a-recipe). For common questions and troubleshooting tips, check out our [EasyBuild Frequently Asked Questions](https://docs.ccr.buffalo.edu/en/latest/howto/easybuild/#frequently-asked-questions).
 
 ## When to use or not use EasyBuild to install software in your account
 
