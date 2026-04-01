@@ -25,7 +25,7 @@ salloc: Waiting for resource configuration
 salloc: Nodes [NodeID] are ready for job
 ```
 
-2. Navigate to your build directory and use the Slurm job local temporary directory for cache. Ensure `Rocker.def` is in your build directory. Instructions on cloning the example repository can be found [here](/README.md).
+2. Navigate to your build directory and use the Slurm job local temporary directory for cache. Ensure `Rocker.def` is in your build directory. You may clone the [CCR examples repository](/README.md) in your directory or copy and paste the contents of the `Rocker.def` file into a new file.
 ```
 cd /projects/academic/[YourGroupName]/[CCRusername]/Rocker
 export APPTAINER_CACHEDIR="${SLURMTMPDIR}"
