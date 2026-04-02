@@ -30,7 +30,7 @@ Here we update the name of the EB recipe from `SAMtools-1.18-GCC-12.3.0.eb` to `
 cp /cvmfs/soft.ccr.buffalo.edu/versions/2023.01/easybuild/software/Core/easybuild/4.9.4/easybuild/easyconfigs/s/SAMtools/SAMtools-1.18-GCC-12.3.0.eb SAMtools-1.18-GCC-11.2.0.eb
 ```
 
-The [unmodified version of the SAMtools EB recipe file](./SAMtools-1.18-GCC-12.3.0.eb) can be viewd for reference.
+The [unmodified version of the SAMtools EB recipe file](./SAMtools-1.18-GCC-12.3.0.eb) can be viewed for reference.
 
 3. Open the recipe file in your favorite editor. The first thing to change is the toolchain line - change from 12.3.0 to 11.2.0:
 
