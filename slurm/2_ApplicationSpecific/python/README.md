@@ -14,7 +14,7 @@ sbatch python-sp.bash
 ```
 
 ## Parallel Python Tutorial ([parallel/](./parallel))
-Parallel processing is a technique that executes multiple tasks at the same time using multiple CPU cores. There are numerous APIs available to run Python code in parallel, each with their strengths and weaknesses. A common API for parallel Python processing is called `multiprocessing`. This library is powerful, enabling things like inter-process communication. A `multiprocessing` example will be added in a future update.
+Parallel processing is a technique that executes multiple tasks at the same time using multiple CPU cores. There are numerous APIs available to run Python code in parallel, each with their strengths and weaknesses.
 
 ### Joblib ([fibonacci_joblib.py](./parallel/fibonacci_joblib.py))
 For tasks that are embarrassingly parallel or those using large NumPy arrays, `joblib` can be an efficient and convenient solution. In this example, Fibonacci numbers are computed in separate processes without any dependencies across processes. This type of computation is considered **embarrassingly parallel**.
