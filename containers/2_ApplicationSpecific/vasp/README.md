@@ -28,7 +28,7 @@ Refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/latest/
 
 ## Running container
 
-1. Download [O atom](https://www.vasp.at/wiki/index.php/O_atom) VASP example
+1. Download the [O atom](https://www.vasp.at/wiki/index.php/O_atom) VASP example
    for performing a standard calculation for a single oxygen atom in a box:
 
 ```

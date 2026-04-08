@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > AlphaFold 3 requires a model parameters file.  
-> You must request the file with [this form](https://forms.gle/svvpY4u2jsHEwWYS6) and agree to the software [terms of use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md)
+> You must request the file by completing the [AlphaFold 3 model parameter request form](https://forms.gle/svvpY4u2jsHEwWYS6) and agree to the software [terms of use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md)
 > If you are granted access to the file, Google will email you a download link.
 
 Here is an example to setup the parameters file for use:
@@ -40,7 +40,7 @@ Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/
 > Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container.  We recommend requesting an interactive job on a compute node to conduct this build process.
 
 A GPU is NOT needed to build the AlphaFold container.
-See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
+See CCR documentation for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
 
 ```
 salloc --cluster=ub-hpc --partition=debug --qos=debug --mem=0 --exclusive --time=01:00:00
@@ -178,7 +178,7 @@ Abridged expected output:
 > [...]
 > ```
 
-See the [EXAMPLES file](./EXAMPLES.md) for more info.
+See the [EXAMPLES file](./EXAMPLES.md) for more information.
 
 ## Sample Slurm scripts
 

@@ -10,7 +10,7 @@ Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/
 1. Start an interactive job
 
 > [!IMPORTANT]
-> Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container.  We recommend requesting an interactive job on a compute node to conduct this build process.<br/> See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
+> Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container.  We recommend requesting an interactive job on a compute node to conduct this build process.<br/> See CCR documentation for more information on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
 
 ```
 salloc --cluster=ub-hpc --partition=debug --qos=debug --mem=64GB --time=01:00:00
