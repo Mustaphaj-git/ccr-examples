@@ -29,9 +29,10 @@
 #SBATCH --job-name=lammps-example
 #SBATCH --output=lammps-example-%j.out
 
-## Load the required compiler, MPI, and LAMMPS modules.
+## Load the required software modules.
 module load gcc/11.2.0 openmpi/4.1.1
 module load lammps/23Jun2022-kokkos
 
-## Replace in.lammps with the name of your LAMMPS input file.
+## Run LAMMPS using the included input file.
+## Replace in.lammps with the name or path of your own input file as needed.
 srun lmp -in in.lammps
