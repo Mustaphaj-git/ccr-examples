@@ -2,15 +2,13 @@
 
 LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator) is an open-source molecular dynamics software package used to simulate materials, biomolecules, polymers, and other particle-based systems.
 
-Provided in this repository is a [Slurm script](./slurm_LAMMPS_example.bash) that can be used as a starting point for running LAMMPS simulations on CCR's clusters.
+Provided in this repository is a [Slurm script](./slurm_LAMMPS_example.bash) and a small [LAMMPS input file](./in.lammps) that can be used as a starting point for running LAMMPS simulations on CCR's clusters.
 
 ## How to use
 
-The provided example does not include any input data by default. This is intentional, so users can customize the workflow and run simulations with their own input files while becoming familiar with LAMMPS.
+The provided input file runs a small Lennard-Jones particle simulation. It is intended only as a quick test to demonstrate how to submit and run a LAMMPS job on CCR.
 
-The example script loads the required compiler, MPI, and LAMMPS modules before running the simulation.
-
-Replace the example input filename (`in.lammps`) in the Slurm script with the name of your own LAMMPS input file before submitting your job.
+Keep the Slurm script and input file in the same working directory. Before submitting the job, replace the placeholders in the Slurm script with values appropriate for your CCR account and allocation.
 
 Submit the job using:
 
