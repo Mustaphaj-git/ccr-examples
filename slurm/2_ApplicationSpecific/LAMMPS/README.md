@@ -16,11 +16,22 @@ Submit the job using:
 sbatch slurm_LAMMPS_example.bash
 ```
 
-The example executes LAMMPS using:
+The simplest way to execute the included LAMMPS input file is:
 
 ```bash
 srun lmp -in in.lammps
 ```
+
+The provided Slurm example uses a few additional command-line arguments:
+
+```bash
+srun lmp -nocite -screen none -in in.lammps \
+    -log lammps-example-$SLURM_JOBID.log
+```
+
+These options suppress the citation reminder and screen output while writing the LAMMPS output to a log file named with the Slurm job ID.
+
+For additional command-line options and more advanced usage, refer to the official LAMMPS documentation.
 
 ## Additional Information
 
