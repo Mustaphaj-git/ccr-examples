@@ -8,10 +8,10 @@
 ## DOCUMENTATION - https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/
 
 ## Select a cluster, partition, QOS, and account appropriate for your use case.
-#SBATCH --cluster=ub-hpc
-#SBATCH --partition=debug
-#SBATCH --qos=debug
-#SBATCH --account=introccr
+#SBATCH --cluster=[cluster]
+#SBATCH --partition=[partition]
+#SBATCH --qos=[qos]
+#SBATCH --account=[SlurmAccountName]
 
 ## Job runtime limit. The job will be canceled once this limit is reached.
 ## Format: dd:hh:mm
@@ -51,6 +51,7 @@ module list
 ## If SLURM_CPUS_PER_TASK is not defined, use one thread.
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
 
+<<<<<<< HEAD
 ## Print the Slurm environment variables to the job output.
 export | grep SLURM
 
@@ -60,3 +61,9 @@ srun lmp -nocite -screen none -in in.lammps \
     -log lammps-example-$SLURM_JOBID.log
 
 echo "All Done!"
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 582f45c (Update LAMMPS Slurm example
