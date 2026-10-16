@@ -6,8 +6,10 @@ The example is intentionally simple and is meant to demonstrate CCR-specific con
 
 ## Files
 
-- `main.nf` - A simple example Nextflow workflow.
+- `main.nf` - A simple multi-process Nextflow workflow.
 - `nextflow.config` - CCR-specific Slurm configuration for running Nextflow processes.
+- `container-test.nf` - Initial example of running a Nextflow process with a Docker Hub container through Apptainer.
+- `container.config` - Slurm and Apptainer configuration used for the initial container test.
 
 ## CCR Software
 
